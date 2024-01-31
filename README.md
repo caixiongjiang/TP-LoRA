@@ -244,10 +244,15 @@ x: The dataset is not publicly available for commercial reasons.
 </table>
 
 ON-5.3k: Orange-Navel-5.3k dataset.
+
 L-2.7k: Lemon-2.7k dataset.
+
 G-1.9k: Grapefruit-1.9k dataset.
+
 Avg.: Average.
+
 Full: Update parameters for the entire network.
+
 Classify: Update only the parameters in the header section of the classification.
 
 *You can download our methods checkpoints with Basic Model: [TP-LoRA-tiny]() and [TP-LoRA-small]()*
