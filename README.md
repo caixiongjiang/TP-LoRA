@@ -250,7 +250,7 @@ Avg.: Average.
 Full: Update parameters for the entire network.
 Classify: Update only the parameters in the header section of the classification.
 
-*You can download our methods checkpoints with Basic Model: [$\text{TP-LoRA}_{tiny}$]() and [${\text{TP-LoRA}}_{small}$]()*
+*You can download our methods checkpoints with Basic Model: [TP-LoRA-tiny]() and [TP-LoRA-small]()*
 
 
 ### Usages
