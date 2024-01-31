@@ -1,0 +1,20 @@
+TEXT:
+  TINY:
+    ORANGE-NAVEL: "A navel orange defect dataset."
+    GRAPEFRUIT: "A grapefruit defect dataset."
+    LEMON: "A lemon defect dataset."
+  BASE:
+    ORANGE-NAVEL: "This is a navel orange defect dataset with five classes of target pixels rotten, navel deformation, mild pitting, severe pitting, and severe oil spotting."
+    GRAPEFRUIT: "This is a grapefruit defect dataset with three classes of target pixels defect, stem and navel."
+    LEMON: "This is a lemon defect dataset with five classes of target pixels flaw, navel, illness, gangrene, and decay."
+  LARGE:
+    ORANGE-NAVEL: "This is a navel orange defect dataset with five classes of target pixels rotten, navel deformation, mild pitting, severe pitting, and severe oil spotting. Common characteristics of defects in navel oranges include discoloration, abnormal texture, and irregular shape or size."
+    GRAPEFRUIT: "This is a grapefruit defect dataset with three classes of target pixels defect, stem and navel. Distinctive features of defects in grapefruit include color variations, surface abnormalities, uneven texture, and irregularities in shape or size."
+    LEMON: "This is a lemon defect dataset with five classes of target pixels flaw, navel, illness, gangrene, and decay. Common characteristics of defects in lemons include discoloration, surface blemishes, texture irregularities , and variations in shape or size."
+
+MODEL:
+  MLP_HIDDEN_RATIO: 0.125
+  LORA_DIM: 8
+  ACT: "GeLU"  # “GeLU”、“ReLU” and “LoRA”
+  LORA_IN_LOCATION: "ATT+MLP"  # "ATT"、"MLP" and “ATT+MLP”
+  LORA_OUT_LOCATION: "DEEP" # “DEEP” “ALL”

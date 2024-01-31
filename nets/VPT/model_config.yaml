@@ -1,0 +1,7 @@
+# 这里的参数不能修改，不然会报错
+NUM_TOKENS: 10
+LOCATION: "prepend"
+INITIATION: "random"
+PROJECT: -1
+DEEP: True
+DROPOUT: 0.1
