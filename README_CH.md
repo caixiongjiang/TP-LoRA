@@ -248,7 +248,7 @@ Avg.: 平均。
 Full: 更新整个网络的参数。
 Classify: 仅更新分类头部分中的参数。
 
-*您可以下载我们的方法在基本模型上的权重检查点: [$\text{TP-LoRA}_{tiny}$]() 和 [${\text{TP-LoRA}}_{small}$]()*
+*您可以下载我们的方法在基本模型上的权重检查点: [TP-LoRA-tiny]() 和 [TP-LoRA-small]()*
 
 ### 使用
 
