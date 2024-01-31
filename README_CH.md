@@ -242,10 +242,15 @@ x: 出于商业原因，该数据集不公开。
 </table>
 
 ON-5.3k: Orange-Navel-5.3k数据集。
+
 L-2.7k: Lemon-2.7k数据集。
+
 G-1.9k: Grapefruit-1.9k数据集。
+
 Avg.: 平均。
+
 Full: 更新整个网络的参数。
+
 Classify: 仅更新分类头部分中的参数。
 
 *您可以下载我们的方法在基本模型上的权重检查点: [TP-LoRA-tiny]() 和 [TP-LoRA-small]()*
