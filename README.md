@@ -255,7 +255,7 @@ Full: Update parameters for the entire network.
 
 Classify: Update only the parameters in the header section of the classification.
 
-*You can download our methods checkpoints with Basic Model: [TP-LoRA-tiny]() and [TP-LoRA-small]()*
+*You can download our methods checkpoints with Basic Model: [TP-LoRA-tiny]() and [TP-LoRA-small]().*
 
 
 ### Usages
