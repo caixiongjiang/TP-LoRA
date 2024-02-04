@@ -296,6 +296,8 @@ backbone_stat_dict = {}
 * Train:
 ```
 python3 train.py
+# 多显卡机子指定单卡训练
+CUDA_VISIBLE_DEVICES={gpu number} python3 train.py
 ``` 
 
 #### 高效微调
@@ -322,6 +324,8 @@ pretrained_dict = torch.load(model_path, map_location=device)
 * Train:
 ```python
 python3 train.py
+# 多显卡机子指定单卡训练
+CUDA_VISIBLE_DEVICES={gpu number} python3 train.py
 ```
 
 #### 测试 & 预测 & 参数计数 
