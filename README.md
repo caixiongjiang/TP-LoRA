@@ -299,6 +299,8 @@ backbone_stat_dict = {}
 * Train:
 ```
 python3 train.py
+Multi-graphics machines designated for single-card training
+CUDA_VISIBLE_DEVICES="gpu number" python3 train.py
 ``` 
 
 #### PEFT
@@ -325,6 +327,8 @@ pretrained_dict = torch.load(model_path, map_location=device)
 * Train:
 ```python
 python3 train.py
+Multi-graphics machines designated for single-card training
+CUDA_VISIBLE_DEVICES="gpu number" python3 train.py
 ```
 
 #### Test & Predict & Parameter count
