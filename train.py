@@ -16,6 +16,7 @@ from nets.LoRA.lora import LoRA
 from nets.AdaptFormer.adaptformer import AdaptFormer
 from nets.VPT.vpt import VPT
 from nets.TP_LoRA.tp_lora import TP_LoRA
+from nets.TP_LoRA.utils import Update_TP_LoRA_Set
 
 from nets.utils import get_lr_scheduler, set_optimizer_lr, weights_init
 from utils.callbacks import LossHistory, EvalCallback
@@ -97,6 +98,7 @@ if __name__ == "__main__":
     # Ablation Experiment
 
     # Change config.yaml
+    Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='LoRA', in_location='ATT', out_location='ALL')
     model = TP_LoRA(text_size='TINY', dataset='Orange-Navel', num_classes=num_classes, pretrained=pretrained, backbone=backbone).train()
 
     # (Different Text)
