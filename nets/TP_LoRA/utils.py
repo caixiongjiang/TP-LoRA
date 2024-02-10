@@ -28,7 +28,7 @@ def pad_sequence(tensor, L):
 
 def Update_TP_LoRA_Set(mlp_dim, lora_dim, act, in_location, out_location, file_path=r'E:\PEFT\nets\TP_LoRA\config.yaml'):
     with open(file_path, 'r') as f:
-        data = yaml.safe_load(file_path)
+        data = yaml.safe_load(f)
 
     # 修改值
     data["MODEL"]["MLP_HIDDEN_RATIO"] = mlp_dim
@@ -37,6 +37,6 @@ def Update_TP_LoRA_Set(mlp_dim, lora_dim, act, in_location, out_location, file_p
     data["MODEL"]["LORA_IN_LOCATION"] = in_location
     data["MODEL"]["LORA_OUT_LOCATION"] = out_location
 
-    with open(file_path, 'r') as f:
+    with open(file_path, 'w') as f:
         yaml.dump(data, f)
 
