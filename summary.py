@@ -121,6 +121,7 @@ if __name__ == '__main__':
     vpt_t = VPT(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(vpt_t, model_name='VPT')
 
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='DEEP')
     tp_lora_t = TP_LoRA(text_size='LARGE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(tp_lora_t, model_name='TP-LoRA')
 
@@ -151,6 +152,7 @@ if __name__ == '__main__':
     vpt_s = VPT(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(vpt_s, model_name='VPT')
 
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='DEEP')
     tp_lora_s = TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=3 + 1, pretrained=False, backbone="swin_S_224")
     calculate(tp_lora_s, model_name='TP-LoRA')
 
