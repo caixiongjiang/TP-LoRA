@@ -59,9 +59,9 @@ class TP_LoRA_Adapter(nn.Module):
         x_down = self.dropout1(x_down)
         x_up = self.adapter_up(x_down)  # equivalent to 1 * 1 Conv
         if L < self.words_vector.shape[1]:
-            x_pt = self.dropout2(self.mlp(self.words_vector[:, :L, :]))
+            x_pt = self.dropout2(self.mlp(self.words_vector[:, :L, :].to('cuda')))
         else:
-            x_pt = self.dropout2(self.mlp(pad_sequence(self.words_vector, L).to('cuda:0')))
+            x_pt = self.dropout2(self.mlp(pad_sequence(self.words_vector, L).to('cuda')))
 
         return x_up + x_pt
 
@@ -108,9 +108,9 @@ class TP_LoRA_Adapter_CNN(nn.Module):
         x_down = self.dropout1(x_down)
         x_up = self.adapter_up(x_down)  # equivalent to 1 * 1 Conv
         if L < self.words_vector.shape[1]:
-            x_pt = self.dropout2(self.mlp(self.words_vector[:, :L, :]))
+            x_pt = self.dropout2(self.mlp(self.words_vector[:, :L, :].to('cuda')))
         else:
-            x_pt = self.dropout2(self.mlp(pad_sequence(self.words_vector, L).to('cuda:0')))
+            x_pt = self.dropout2(self.mlp(pad_sequence(self.words_vector, L).to('cuda')))
 
         x_up = x_up + x_pt
         x_up = x_up.view(x.size(0), x.size(2), x.size(3), x.size(1))
