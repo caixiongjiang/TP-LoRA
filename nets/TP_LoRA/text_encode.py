@@ -1,41 +1,43 @@
 import torch
-from transformers import BertModel, BertConfig, BertTokenizer
 
+from transformers import BertModel, BertConfig, BertTokenizer
 from nets.TP_LoRA.utils import read_config
 
 
-
-def get_vector(size, dataset):
+def get_vector(size, dataset, net, tokenizer):
     print("BERT model process！")
     text, _ = get_prompt(size=size, dataset=dataset)
-    words_vector = text2vector(text, hidden_size=192, layer_num=12)
+    words_vector = text2vector(text, net, tokenizer)
 
     return words_vector
 
 
 
-def text2vector(text:str, hidden_size=192, layer_num=8):
-    # model
+def model_init():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    base_config = BertConfig.from_pretrained('bert-base-uncased', cache_dir=r'E:\PEFT\model_data\bert')
-    base_config.hidden_size = hidden_size
-    base_config.num_hidden_layers = layer_num
-    bert_base = BertModel(config=base_config)
-    tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', cache_dir=r'E:\PEFT\model_data\bert')
+    base_config = BertConfig.from_pretrained(r'E:\PEFT\model_data\bert')
+    bert_base = BertModel.from_pretrained(r'E:\PEFT\model_data\bert', config=base_config)
+    tokenizer = BertTokenizer.from_pretrained(r'E:\PEFT\model_data\bert')
     bert_base.to(device)
 
+    return bert_base, tokenizer
+
+
+
+
+def text2vector(text:str, net, tokenizer):
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     input_tokens = tokenizer.encode(text, add_special_tokens=True)
     input_ids = torch.tensor([input_tokens] * 1).to(device)
 
     with torch.no_grad():
-        bert_base.eval()
-        outputs = bert_base(input_ids)
+        net.eval()
+        outputs = net(input_ids)
 
     # 获取最后一层的隐藏状态（词向量）
     word_vectors = outputs.last_hidden_state.to('cpu')
-    torch.cuda.empty_cache()
 
-    return word_vectors # [1, Seq, C]
+    return word_vectors # [1, seq, 768]
 
 
 
