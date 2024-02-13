@@ -620,7 +620,7 @@ class SwinTransformer(nn.Module):
 
         # add words_vector
         net, tokenizers = model_init()
-        self.words_vector = get_vector(size=text_size, dataset=dataset, net=net, tokenizer=tokenizers) #[1, seq, 768]
+        self.words_vector = get_vector(size=size, dataset=dataset, net=net, tokenizer=tokenizers) #[1, seq, 768]
 
         self.num_classes = num_classes
         self.num_layers = len(depths)
