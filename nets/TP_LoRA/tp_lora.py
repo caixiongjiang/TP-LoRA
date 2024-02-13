@@ -1,7 +1,7 @@
 from nets.TP_LoRA.swin_transformer import swin_tiny_patch4_window7_224 as create_model_T_224
 from nets.TP_LoRA.swin_transformer import swin_small_patch4_window7_224 as create_model_S_224
 from nets.TP_LoRA.tp_lora_adapter import TP_LoRA_Adapter, TP_LoRA_Adapter_CNN
-from nets.TP_LoRA.text_encode import get_vector
+from nets.TP_LoRA.text_encode import model_init, get_vector
 
 import torch.nn as nn
 import torch
@@ -122,7 +122,8 @@ class TP_LoRA(nn.Module):
             self.swin_backbone = create_model_S_224(size=text_size, dataset=dataset, num_classes=1000)
 
         # text_prompt_token_vector
-        self.words_vector = get_vector(size=text_size, dataset=dataset)
+        net, tokenizers = model_init()
+        self.words_vector = get_vector(size=text_size, dataset=dataset, net=net, tokenizer=tokenizers) #[1, seq, 768]
 
         # 将swin transfomer的分类头去掉
         remove_head = nn.Sequential()
