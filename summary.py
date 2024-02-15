@@ -46,51 +46,51 @@ if __name__ == '__main__':
     model_1_1 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_1_1, model_name='Ablation model 1-1', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='ReLU', in_location='ATT', out_location='ALL')
+    Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='GeLU', in_location='ATT', out_location='ALL')
     model_1_2 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_1_2, model_name='Ablation model 1-2', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='GeLU', in_location='ATT', out_location='ALL')
+    Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='ReLU', in_location='ATT', out_location='ALL')
     model_1_3 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_1_3, model_name='Ablation model 1-3', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT', out_location='ALL')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT', out_location='ALL')
     model_1_4 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_1_4, model_name='Ablation model 1-4', basemodel=False)
 
     print("=====================Experinment 2======================")
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT', out_location='ALL')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT', out_location='ALL')
     model_2_1 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_1, model_name='Ablation model 2-1', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='MLP', out_location='ALL')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='MLP', out_location='ALL')
     model_2_2 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_2, model_name='Ablation model 2-2', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='ALL')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='ALL')
     model_2_3 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_3, model_name='Ablation model 2-3', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='ALL')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='ALL')
     model_2_4 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_4, model_name='Ablation model 2-4', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='DEEP')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_2_5 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_5, model_name='Ablation model 2-5', basemodel=False)
 
     print("=====================Experinment 3======================")
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='DEEP')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_3_1 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_3_1, model_name='Ablation model 3-1', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='DEEP')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_3_2 = TP_LoRA(text_size='BASE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_3_2, model_name='Ablation model 3-2', basemodel=False)
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='DEEP')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_3_3 = TP_LoRA(text_size='LARGE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_3_3, model_name='Ablation model 3-3', basemodel=False)
    
@@ -121,7 +121,7 @@ if __name__ == '__main__':
     vpt_t = VPT(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(vpt_t, model_name='VPT')
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='DEEP')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     tp_lora_t = TP_LoRA(text_size='LARGE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(tp_lora_t, model_name='TP-LoRA')
 
@@ -152,7 +152,7 @@ if __name__ == '__main__':
     vpt_s = VPT(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(vpt_s, model_name='VPT')
 
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='GeLU', in_location='ATT+MLP', out_location='DEEP')
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     tp_lora_s = TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=3 + 1, pretrained=False, backbone="swin_S_224")
     calculate(tp_lora_s, model_name='TP-LoRA')
 
