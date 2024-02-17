@@ -98,6 +98,10 @@ if __name__ == "__main__":
     # Ablation Experiment
 
     # Change config.yaml
+    # mlp_dim:0.125, 0.25
+    # act: LoRA, GeLU, ReLU 
+    # in_location: ATT, MLP, ATT+MLP
+    # out_location: ALL, DEEP
     Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='LoRA', in_location='ATT', out_location='ALL')
     model = TP_LoRA(text_size='TINY', dataset='Orange-Navel', num_classes=num_classes, pretrained=pretrained, backbone=backbone).train()
 
