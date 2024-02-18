@@ -1,5 +1,6 @@
 import yaml
 import torch
+import json
 
 def read_config(config_file=r'E:\PEFT\nets\TP_LoRA\config.yaml'):
     with open(config_file, 'r', encoding='utf-8') as f:
@@ -40,3 +41,13 @@ def Update_TP_LoRA_Set(mlp_dim, lora_dim, act, in_location, out_location, file_p
     with open(file_path, 'w') as f:
         yaml.dump(data, f)
 
+def read_vector_from_json(size, dataset, file_name=r'E:\PEFT\nets\TP_LoRA\prompt_vector.json'):
+
+    with open(file_name, "r") as json_file:
+        data = json.load(json_file)
+
+        for item in data:
+            if item["size"] == size and item["dataset"] == dataset:
+                return item["vector"]
+
+    return None
