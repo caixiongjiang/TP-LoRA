@@ -1,5 +1,5 @@
 import torch
-
+import json
 from transformers import BertModel, BertConfig, BertTokenizer
 from nets.TP_LoRA.utils import read_config
 
@@ -35,9 +35,9 @@ def text2vector(text:str, net, tokenizer):
         outputs = net(input_ids)
 
     # 获取最后一层的隐藏状态（词向量）
-    word_vectors = outputs.last_hidden_state.to('cpu')
+    words_vector = outputs.last_hidden_state.to('cpu')
 
-    return word_vectors # [1, seq, 768]
+    return words_vector # [1, seq, 768]
 
 
 
@@ -77,21 +77,35 @@ def get_prompt(size="TINY", dataset="Orange-Navel"):
 
     return text_prompt, len(text_prompt)
 
+def vector2dict(words_vector, size, dataset):
+
+    vector = words_vector.tolist()
+    data = {
+        'size': size,
+        'dataset': dataset,
+        'vector': vector
+    }
+    
+    return data
+
+
+def save_json(dict_list, json_file_path=r'E:\PEFT\nets\TP_LoRA\prompt_vector.json'):
+
+    with open(json_file_path, 'w') as f:
+        json.dump(dict_list, f, indent=4)
+
 
 if __name__ == '__main__':
-    text1, length1 = get_prompt()
-    text2, length2 = get_prompt(size='BASE', dataset='Grapefruit')
-    text3, length3 = get_prompt(size='LARGE', dataset='Orange-Navel')
-    print("Text:", text1)
-    print("Text length:", length1)
-    print("Text:", text2)
-    print("Text length:", length2)
-    print("Text:", text3)
-    print("Text length:", length3)
+    size_list = ['TINY', 'BASE', 'LARGE']
+    datasets = ['Orange-Navel', 'Lemon', 'Grapefruit']
 
-    x1 = get_vector(size='TINY', dataset='Orange-Navel')
-    print(x1.shape)
-    x2 = get_vector(size='BASE', dataset='Orange-Navel')
-    print(x2.shape)
-    x3 = get_vector(size='LARGE', dataset='Orange-Navel')
-    print(x3.shape)
+    json_list = []
+    net, tokenizer = model_init()
+    for size in size_list:
+        for dataset in datasets:
+            words_vector = get_vector(size, dataset, net, tokenizer)
+            data = vector2dict(words_vector, size, dataset)
+            json_list.append(data)
+
+    save_json(json_list)
+   
