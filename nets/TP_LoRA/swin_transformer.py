@@ -14,8 +14,8 @@ import numpy as np
 from typing import Optional
 
 from nets.TP_LoRA.tp_lora_adapter import TP_LoRA_Adapter
-from nets.TP_LoRA.utils import read_config
-from nets.TP_LoRA.text_encode import model_init, get_vector
+from nets.TP_LoRA.utils import read_config, read_vector_from_json
+
 
 
 
@@ -619,8 +619,7 @@ class SwinTransformer(nn.Module):
         super().__init__()
 
         # add words_vector
-        net, tokenizers = model_init()
-        self.words_vector = get_vector(size=size, dataset=dataset, net=net, tokenizer=tokenizers) #[1, seq, 768]
+        self.words_vector = torch.tensor(read_vector_from_json(size, dataset)) #[1, seq, 768]
 
         self.num_classes = num_classes
         self.num_layers = len(depths)
