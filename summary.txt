@@ -1,10 +1,8 @@
 =====================Ablation Study======================
 =========================================================
 =====================Experinment 1======================
-BERT model process！
-D:\anaconda3\envs\pytorch\lib\site-packages\torch\functional.py:478: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  C:\cb\pytorch_1000000000000\work\aten\src\ATen\native\TensorShape.cpp:2895.)
+/root/miniconda3/lib/python3.8/site-packages/torch/functional.py:445: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2157.)
   return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -22,8 +20,6 @@ params= 45.970706M
 Unfrozen params= 0.218534M
 Unfrozen Ratio= 0.48%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -41,8 +37,6 @@ params= 45.970706M
 Unfrozen params= 0.218534M
 Unfrozen Ratio= 0.48%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -60,8 +54,6 @@ params= 45.970706M
 Unfrozen params= 0.218534M
 Unfrozen Ratio= 0.48%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -80,8 +72,6 @@ Unfrozen params= 0.253894M
 Unfrozen Ratio= 0.55%
 ==========================
 =====================Experinment 2======================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -99,8 +89,6 @@ params= 46.006066M
 Unfrozen params= 0.253894M
 Unfrozen Ratio= 0.55%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -118,8 +106,6 @@ params= 45.903706M
 Unfrozen params= 0.151534M
 Unfrozen Ratio= 0.33%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -137,8 +123,6 @@ params= 46.108426M
 Unfrozen params= 0.356254M
 Unfrozen Ratio= 0.77%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -156,8 +140,6 @@ params= 46.108426M
 Unfrozen params= 0.356254M
 Unfrozen Ratio= 0.77%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -176,8 +158,6 @@ Unfrozen params= 0.320918M
 Unfrozen Ratio= 0.7%
 ==========================
 =====================Experinment 3======================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -195,8 +175,6 @@ params= 46.07309M
 Unfrozen params= 0.320918M
 Unfrozen Ratio= 0.7%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -214,8 +192,6 @@ params= 46.07309M
 Unfrozen params= 0.320918M
 Unfrozen Ratio= 0.7%
 ==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
@@ -356,25 +332,6 @@ Unfrozen Ratio= 1.74%
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
 [INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
 [INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
-==========================
-VPT:
-FLOPs= 72.126707264G
-params= 46.935762M
-Unfrozen params= 3.184896M
-Unfrozen Ratio= 6.52%
-==========================
-BERT model process！
-BERT model process！
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
@@ -505,25 +462,6 @@ params= 68.446962M
 Unfrozen params= 1.401222M
 Unfrozen Ratio= 2.05%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
-==========================
-VPT:
-FLOPs= 76.726753856G
-params= 68.22933M
-Unfrozen params= 3.306M
-Unfrozen Ratio= 4.71%
-==========================
-BERT model process！
-BERT model process！
 [INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
 [INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
 [INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
