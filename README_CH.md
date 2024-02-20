@@ -317,6 +317,7 @@ UnFreeze_Epoch      = 500
 Unfreeze_batch_size = 8
 VOCdevkit_path  = 'datasets/Orange-Navel-5.3k'
 
+Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT', out_location='DEEP')
 model = TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=num_classes, pretrained=pretrained, backbone=backbone).train()
 
 pretrained_dict = torch.load(model_path, map_location=device)
@@ -342,6 +343,7 @@ _defaults = {
     }
 
 def generate(self, onnx=False):
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT', out_location='DEEP')
     self.net = TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=self.num_classes, backbone=self.backbone)
 ```
 * 评估Navel-Orange-5.3k上的测试集，结果将在`miou_out`目录中：
