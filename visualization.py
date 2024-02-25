@@ -79,7 +79,6 @@ def cam_process(layer_name, dataset="Orange-Navel-5.3k", target_class="rotten", 
                     int((input_shape[1] - nw) // 2) : int((input_shape[1] - nw) // 2 + nw)]
             gray_scale_cam = cv2.resize(gray_scale_cam, (orininal_w, orininal_h), interpolation = cv2.INTER_LINEAR)
             cam_image = show_cam_on_image(preprocess_input(np.array(old_img, np.float32)), gray_scale_cam, use_rgb=True, image_weight=0.6, heat_map=heat_map)
-            cam_image = cv2.resize(cam_image, (512, 512), interpolation = cv2.INTER_LINEAR)
         cam_image = Image.fromarray(cam_image)
         if heat_map == True:
             cam_image.save(f"{res_dir}/{image_name}/{layer_name}_{image_name}_heatmap.jpg")
@@ -97,8 +96,6 @@ def cam_process(layer_name, dataset="Orange-Navel-5.3k", target_class="rotten", 
                     int((input_shape[1] - nw) // 2) : int((input_shape[1] - nw) // 2 + nw)]
             gray_scale_cam = cv2.resize(gray_scale_cam, (orininal_w, orininal_h), interpolation = cv2.INTER_LINEAR)
             cam_image = show_cam_on_image(preprocess_input(np.array(old_img, np.float32)), gray_scale_cam, use_rgb=True, image_weight=0.6, heat_map=heat_map)
-            # In order to facilitate a clearer display, save as 512*512
-            cam_image = cv2.resize(cam_image, (512, 512), interpolation = cv2.INTER_LINEAR)
         cam_image = Image.fromarray(cam_image)
         if heat_map == True:
             cam_image.save(f"{res_dir}/{image_name}/{layer_name}_{image_name}_heatmap.jpg")
