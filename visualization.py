@@ -8,6 +8,7 @@ import math
 import copy
 import sys
 import os
+import cv2
 
 from utils.utils import cvtColor, resize_image, preprocess_input
 
@@ -74,8 +75,11 @@ def cam_process(layer_name, dataset="Orange-Navel-5.3k", target_class="rotten", 
         with methods[args.method](model=model,
                                 target_layers=target_layers) as cam:
             gray_scale_cam = cam(input_tensor=image_tensor, targets=targets)[0, :]
-            print(gray_scale_cam.shape)
-            cam_image = show_cam_on_image(preprocess_input(np.array(image_data, np.float32)), gray_scale_cam, use_rgb=True, image_weight=0.6, heat_map=heat_map)
+            gray_scale_cam = gray_scale_cam[int((input_shape[0] - nh) // 2) : int((input_shape[0] - nh) // 2 + nh), \
+                    int((input_shape[1] - nw) // 2) : int((input_shape[1] - nw) // 2 + nw)]
+            gray_scale_cam = cv2.resize(gray_scale_cam, (orininal_w, orininal_h), interpolation = cv2.INTER_LINEAR)
+            cam_image = show_cam_on_image(preprocess_input(np.array(old_img, np.float32)), gray_scale_cam, use_rgb=True, image_weight=0.6, heat_map=heat_map)
+            cam_image = cv2.resize(cam_image, (512, 512), interpolation = cv2.INTER_LINEAR)
         cam_image = Image.fromarray(cam_image)
         if heat_map == True:
             cam_image.save(f"{res_dir}/{image_name}/{layer_name}_{image_name}_heatmap.jpg")
@@ -88,8 +92,13 @@ def cam_process(layer_name, dataset="Orange-Navel-5.3k", target_class="rotten", 
                                 target_layers=target_layers,
                                 reshape_transform=reshape_transform) as cam:
             gray_scale_cam = cam(input_tensor=image_tensor, targets=targets)[0, :]
-            print(gray_scale_cam.shape)
-            cam_image = show_cam_on_image(preprocess_input(np.array(image_data, np.float32)), gray_scale_cam, use_rgb=True, image_weight=0.6, heat_map=heat_map)
+            # Remove the extra part of the gray bar.
+            gray_scale_cam = gray_scale_cam[int((input_shape[0] - nh) // 2) : int((input_shape[0] - nh) // 2 + nh), \
+                    int((input_shape[1] - nw) // 2) : int((input_shape[1] - nw) // 2 + nw)]
+            gray_scale_cam = cv2.resize(gray_scale_cam, (orininal_w, orininal_h), interpolation = cv2.INTER_LINEAR)
+            cam_image = show_cam_on_image(preprocess_input(np.array(old_img, np.float32)), gray_scale_cam, use_rgb=True, image_weight=0.6, heat_map=heat_map)
+            # In order to facilitate a clearer display, save as 512*512
+            cam_image = cv2.resize(cam_image, (512, 512), interpolation = cv2.INTER_LINEAR)
         cam_image = Image.fromarray(cam_image)
         if heat_map == True:
             cam_image.save(f"{res_dir}/{image_name}/{layer_name}_{image_name}_heatmap.jpg")
@@ -169,7 +178,9 @@ if __name__ == '__main__':
     old_img     = copy.deepcopy(image)
     orininal_h  = np.array(image).shape[0]
     orininal_w  = np.array(image).shape[1]
-    image_data, nw, nh  = resize_image(image, (224, 224))
+    input_shape = [224, 224]
+    # If the dimensions do not match, add gray bars.
+    image_data, nw, nh  = resize_image(image, (input_shape[1], input_shape[0])) 
     image_data_1  = np.expand_dims(np.transpose(preprocess_input(np.array(image_data, np.float32)), (2, 0, 1)), 0)
     image_tensor = torch.from_numpy(image_data_1)
 
@@ -227,9 +238,4 @@ if __name__ == '__main__':
         # cam_process(layer_name, dataset="Orange-Navel-5.3k", target_class="severe oil spotting")
         # cam_process(layer_name, dataset="Orange-Navel-5.3k", target_class="rotten")
         cam_process(layer_name, dataset="Orange-Navel-5.3k", target_class="mild pitting")
-
-    
-    
-    
-
-    
+        
