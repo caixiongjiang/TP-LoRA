@@ -226,9 +226,12 @@ if __name__ == '__main__':
         "Backbone_Adapter_2_MLP_LoRA": model.swin_backbone.layers[1].blocks[-1].tp_lora_mlp.adapter_up,
         "Backbone_Adapter_3_ATT_LoRA": model.swin_backbone.layers[2].blocks[-1].attn.tp_lora_v.adapter_up,
         "Backbone_Adapter_3_MLP_LoRA": model.swin_backbone.layers[2].blocks[-1].tp_lora_mlp.adapter_up,
-        "Backbone_Adapter_1_Text": model.swin_backbone.layers[0].blocks[-1].tp_lora_mlp.mlp,
-        "Backbone_Adapter_2_Text": model.swin_backbone.layers[1].blocks[-1].tp_lora_mlp.mlp,
-        "Backbone_Adapter_3_Text": model.swin_backbone.layers[2].blocks[-1].tp_lora_mlp.mlp
+        "Backbone_Adapter_1_ATT_Text": model.swin_backbone.layers[0].blocks[-1].attn.tp_lora_v.mlp,
+        "Backbone_Adapter_1_MLP_Text": model.swin_backbone.layers[0].blocks[-1].tp_lora_mlp.mlp,
+        "Backbone_Adapter_2_ATT_Text": model.swin_backbone.layers[1].blocks[-1].attn.tp_lora_v.mlp,
+        "Backbone_Adapter_2_MLP_Text": model.swin_backbone.layers[1].blocks[-1].tp_lora_mlp.mlp,
+        "Backbone_Adapter_3_ATT_Text": model.swin_backbone.layers[2].blocks[-1].attn.tp_lora_v.mlp,
+        "Backbone_Adapter_3_MLP_Text": model.swin_backbone.layers[2].blocks[-1].tp_lora_mlp.mlp
     }
 
     for layer_name, _ in layers.items():
