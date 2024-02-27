@@ -19,6 +19,7 @@ This is the official repository for our recent work: TP-LoRA([PDF]())
 ### Updates
 
 - [x] Code and datasets are available here.(January/30/2024)
+- [x] Experimental results are available.(February/26/2024)
 
 ### Overview
 ---
@@ -98,148 +99,148 @@ x: The dataset is not publicly available for commercial reasons.
     <tr>
 	    <td style="text-align: center;">Full</td>
 	    <td rowspan="9" style="text-align: center;">Swin-Tiny</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">45.75</td>  
+      <td style="text-align: center;">78.46</td>
+      <td style="text-align: center;">64.32</td>
+      <td style="text-align: center;">67.70</td>
+      <td style="text-align: center;">70.16</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">Classify</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0</td>  
+      <td style="text-align: center;">16.75</td>
+      <td style="text-align: center;">18.11</td>
+      <td style="text-align: center;">30.76</td>
+      <td style="text-align: center;">21.87</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">BitFit</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.09</td>  
+      <td style="text-align: center;">58.10</td>
+      <td style="text-align: center;">40.88</td>
+      <td style="text-align: center;">54.20</td>
+      <td style="text-align: center;">51.06</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">VPT</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">3.18</td>  
+      <td style="text-align: center;">60.47</td>
+      <td style="text-align: center;">36.64</td>
+      <td style="text-align: center;">53.71</td>
+      <td style="text-align: center;">50.27</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">Adapter</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">2.52</td>  
+      <td style="text-align: center;">75.63</td>
+      <td style="text-align: center;">61.10</td>
+      <td style="text-align: center;">68.95</td>
+      <td style="text-align: center;">68.56</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">AdaptFormer</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.81</td>  
+      <td style="text-align: center;">70.32</td>
+      <td style="text-align: center;">54.37</td>
+      <td style="text-align: center;">57.18</td>
+      <td style="text-align: center;">60.62</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">LoRA</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.17</td>  
+      <td style="text-align: center;">69.43</td>
+      <td style="text-align: center;">56.66</td>
+      <td style="text-align: center;">60.06</td>
+      <td style="text-align: center;">62.05</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">Convpass</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.20</td>  
+      <td style="text-align: center;">70.04</td>
+      <td style="text-align: center;">50.32</td>
+      <td style="text-align: center;">59.03</td>
+      <td style="text-align: center;">59.80</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">TP-LoRA(ours)</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.32</td>  
+      <td style="text-align: center;">76.98</td>
+      <td style="text-align: center;">62.59</td>
+      <td style="text-align: center;">68.17</td>
+      <td style="text-align: center;">69.25</td>
 	</tr >
 	<tr>
 	    <td style="text-align: center;">Full</td>
 	    <td rowspan="9" style="text-align: center;">Swin-Small</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">67.05</td>  
+      <td style="text-align: center;">78.30</td>
+      <td style="text-align: center;">64.17</td>
+      <td style="text-align: center;">69.20</td>
+      <td style="text-align: center;">70.56</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">Classify</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0</td>  
+      <td style="text-align: center;">17.07</td>
+      <td style="text-align: center;">18.54</td>
+      <td style="text-align: center;">30.75</td>
+      <td style="text-align: center;">22.12</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">BitFit</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.16</td>  
+      <td style="text-align: center;">61.15</td>
+      <td style="text-align: center;">48.43</td>
+      <td style="text-align: center;">54.52</td>
+      <td style="text-align: center;">54.70</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">VPT</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">3.31</td>  
+      <td style="text-align: center;">64.17</td>
+      <td style="text-align: center;">41.13</td>
+      <td style="text-align: center;">54.14</td>
+      <td style="text-align: center;">53.15</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">Adapter</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">4.30</td>  
+      <td style="text-align: center;">76.86</td>
+      <td style="text-align: center;">60.21</td>
+      <td style="text-align: center;">68.95</td>
+      <td style="text-align: center;">68.67</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">AdaptFormer</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">1.40</td>  
+      <td style="text-align: center;">73.76</td>
+      <td style="text-align: center;">61.02</td>
+      <td style="text-align: center;">65.06</td>
+      <td style="text-align: center;">66.61</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">LoRA</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.32</td>  
+      <td style="text-align: center;">71.30</td>
+      <td style="text-align: center;">60.25</td>
+      <td style="text-align: center;">64.07</td>
+      <td style="text-align: center;">65.21</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">Convpass</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.37</td>  
+      <td style="text-align: center;">73.62</td>
+      <td style="text-align: center;">62.18</td>
+      <td style="text-align: center;">66.01</td>
+      <td style="text-align: center;">67.27</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">TP-LoRA(ours)</td>
-	    <td style="text-align: center;"></td>  
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
-      <td style="text-align: center;"></td>
+	    <td style="text-align: center;">0.53</td>  
+      <td style="text-align: center;">77.25</td>
+      <td style="text-align: center;">64.32</td>
+      <td style="text-align: center;">68.69</td>
+      <td style="text-align: center;">70.09</td>
 	</tr >
 </table>
 
@@ -254,8 +255,6 @@ Avg.: Average.
 Full: Update parameters for the entire network.
 
 Classify: Update only the parameters in the header section of the classification.
-
-*You can download our methods checkpoints with Basic Model: [TP-LoRA-tiny]() and [TP-LoRA-small]().*
 
 
 ### Usages
@@ -332,7 +331,7 @@ python3 train.py
 CUDA_VISIBLE_DEVICES={gpu number} python3 train.py
 ```
 
-#### Test & Predict & Parameter count
+#### Test & Predict & Parameter count & Visualization
 
 * For example, download the TP-LoRA methods' weight and put them into 
 `logs/Navel-Orange-5.3k/Swin-Tiny/TP-LoRA` dir.
@@ -368,6 +367,11 @@ Input image filename:'your image dir'
 python3 summary.py
 ```
 
+* Class-activated mask visualization of TP-LoRA modules for each layer using the LayerCAM method：
+```python
+python3 visualization.py
+```
+
 
 ### Citation
 ---
@@ -380,4 +384,5 @@ python3 summary.py
 
 * This implementation is based on [unet-pytorch](https://github.com/bubbliiiing/unet-pytorch).
 * Some PEFT comparison methods refer to [PETL-ViT](https://github.com/JieShibo/PETL-ViT) this repository.
+* LayerCAM visualization code referenced in [pytorch-grad-cam](https://github.com/jacobgil/pytorch-grad-cam) repository.
 
