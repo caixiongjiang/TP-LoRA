@@ -100,10 +100,10 @@ x: The dataset is not publicly available for commercial reasons.
 	    <td style="text-align: center;">Full</td>
 	    <td rowspan="9" style="text-align: center;">Swin-Tiny</td>
 	    <td style="text-align: center;">45.75</td>  
-      <td style="text-align: center;">78.46</td>
-      <td style="text-align: center;">64.32</td>
+      <td style="text-align: center;"><b>78.46</td>
+      <td style="text-align: center;"><b>64.32</td>
       <td style="text-align: center;">67.70</td>
-      <td style="text-align: center;">70.16</td>
+      <td style="text-align: center;"><b>70.16</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">Classify</td>
@@ -166,17 +166,17 @@ x: The dataset is not publicly available for commercial reasons.
 	    <td style="text-align: center;">0.32</td>  
       <td style="text-align: center;">76.98</td>
       <td style="text-align: center;">62.59</td>
-      <td style="text-align: center;">68.17</td>
+      <td style="text-align: center;"><b>68.17</td>
       <td style="text-align: center;">69.25</td>
 	</tr >
 	<tr>
 	    <td style="text-align: center;">Full</td>
 	    <td rowspan="9" style="text-align: center;">Swin-Small</td>
 	    <td style="text-align: center;">67.05</td>  
-      <td style="text-align: center;">78.30</td>
+      <td style="text-align: center;"><b>78.30</td>
       <td style="text-align: center;">64.17</td>
-      <td style="text-align: center;">69.20</td>
-      <td style="text-align: center;">70.56</td>
+      <td style="text-align: center;"><b>69.20</td>
+      <td style="text-align: center;"><b>70.56</td>
 	</tr >
     <tr>
 	    <td style="text-align: center;">Classify</td>
@@ -238,7 +238,7 @@ x: The dataset is not publicly available for commercial reasons.
 	    <td style="text-align: center;">TP-LoRA(ours)</td>
 	    <td style="text-align: center;">0.53</td>  
       <td style="text-align: center;">77.25</td>
-      <td style="text-align: center;">64.32</td>
+      <td style="text-align: center;"><b>64.32</td>
       <td style="text-align: center;">68.69</td>
       <td style="text-align: center;">70.09</td>
 	</tr >
