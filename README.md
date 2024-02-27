@@ -43,10 +43,10 @@ This is the official repository for our recent work: TP-LoRA([PDF]())
 
 | Datasets | Image size | Quantities | Enhance | Usage | Link |
 |:--------------------:|:----------------:|:-----------------:|:----------------:|:----------------:|:----------------:|
-| Orange-Navel-4.5k | $512\times 512$ | 4344 | True| Pretrain|[download]()|
+| Orange-Navel-4.5k | $512\times 512$ | 4344 | True| Pretrain|[download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/Orange-Navel-1.5k.zip)|
 | Orange-Navel-5.3k | $144\times 144$ | 5290 | False | PEFT | × |
-| Lemon-2.7k | $1024\times 1024$ | 2690 | False | PEFT | [download]() |
-| Grapefruit-1.9k | $512\times 512$ | 1933 | False | PEFT | [download]() |
+| Lemon-2.7k | $1024\times 1024$ | 2690 | False | PEFT | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/Lemon-2.7k.zip) |
+| Grapefruit-1.9k | $512\times 512$ | 1933 | False | PEFT | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/GrapeFruit-1.9k.zip) |
 
 x: The dataset is not publicly available for commercial reasons.
 
@@ -59,21 +59,21 @@ x: The dataset is not publicly available for commercial reasons.
 
 | Model(Imagenet-1k) | Input size | ckpt |
 |:--------------------:|:---------------------:|:---------------------:|
-| Swin-Tiny | $224\times 224$ | [download]() |
-| Swin-Small | $224\times 224$ | [download]() |
+| Swin-Tiny | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/swin_tiny_patch4_window7_224_1k.pth) |
+| Swin-Small | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/swin_small_patch4_window7_224_1k.pth) |
 
 * Pretrained basic segmentation network:
 
 | Model(Orange-Navel-4.5k) | Input size | mIoU(%) | ckpt |
 |:--------------------:|:---------------------:|:---------------------:|:---------------------:|
-| Swin-T-Att-UNet | $224\times 224$ | 89.75 | [download]() |
-| Swin-S-Att-UNet | $224\times 224$ | 89.92 | [download]() |
+| Swin-T-Att-UNet | $224\times 224$ | 89.75 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/Swin-T-Att-UNet-Orange-Navel-4.5k.pth) |
+| Swin-S-Att-UNet | $224\times 224$ | 89.92 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/Swin-S-Att-UNet-Orange-Navel-4.5k.pth) |
 
 * Text encode network:
 
 | Model | ckpt |
 |:--------------------:|:---------------------:|
-| Bert-base |  [download]() |
+| Bert-base |  [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/bert-base.zip) |
 
 ### Results
 ---
