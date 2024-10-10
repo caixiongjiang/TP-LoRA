@@ -20,6 +20,7 @@
 ---
 - [x] 完成代码和数据集的上传。（2024 1.30）
 - [x] 完成实验结果的上传。（2024 2.26）
+- [x] 根据评审要求更新代码和培训日志。（2024 10.11）
 
 
 ### 概述
@@ -60,6 +61,8 @@ x: 出于商业原因，该数据集不公开。
 |:--------------------:|:---------------------:|:---------------------:|
 | Swin-Tiny | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/swin_tiny_patch4_window7_224_1k.pth) |
 | Swin-Small | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/swin_small_patch4_window7_224_1k.pth) |
+| Convnext-Tiny | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.1/convnext_tiny_1k_224_ema.pth) |
+| ResNet50 | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.1/resnet50-19c8e357.pth) |
 
 * 预训练的基本分割网络：
 
@@ -67,6 +70,8 @@ x: 出于商业原因，该数据集不公开。
 |:--------------------:|:---------------------:|:---------------------:|:---------------------:|
 | Swin-T-Att-UNet | $224\times 224$ | 89.75 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/Swin-T-Att-UNet-Orange-Navel-4.5k.pth) |
 | Swin-S-Att-UNet | $224\times 224$ | 89.92 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/Swin-S-Att-UNet-Orange-Navel-4.5k.pth) |
+| Convnext-T-Att-UNet | $224\times 224$ | 78.54 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.1/Convnext-T-Att-UNet-Orange-Navel-4.5k.pth) |
+| ResNet50-Att-UNet | $224\times 224$ | 85.27 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.1/ResNet50-Att-UNet-Orange-Navel-4.5k.pth) |
 
 * 文本编码网络：
 
@@ -365,6 +370,11 @@ python3 summary.py
 ```python
 python3 visualization.py
 ```
+* 使用LayerCAM的方法对每层的TP-LoRA模块和LoRA模块进行类激活掩码可视化对比:
+```python
+python3 visualization_diff.py
+```
+
 
 ### 引用
 ---
