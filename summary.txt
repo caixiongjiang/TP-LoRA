@@ -1,18 +1,8 @@
 =====================Ablation Study======================
 =========================================================
 =====================Experinment 1======================
-/root/miniconda3/lib/python3.8/site-packages/torch/functional.py:445: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at  ../aten/src/ATen/native/TensorShape.cpp:2157.)
+/home/caixj/anaconda3/envs/TP-LoRA/lib/python3.10/site-packages/torch/functional.py:504: UserWarning: torch.meshgrid: in an upcoming release, it will be required to pass the indexing argument. (Triggered internally at /opt/conda/conda-bld/pytorch_1678402411778/work/aten/src/ATen/native/TensorShape.cpp:3483.)
   return _VF.meshgrid(tensors, **kwargs)  # type: ignore[attr-defined]
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 1-1:
 FLOPs= 46.527952352G
@@ -20,16 +10,6 @@ params= 45.970706M
 Unfrozen params= 0.218534M
 Unfrozen Ratio= 0.48%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 1-2:
 FLOPs= 46.527952352G
@@ -37,16 +17,6 @@ params= 45.970706M
 Unfrozen params= 0.218534M
 Unfrozen Ratio= 0.48%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 1-3:
 FLOPs= 46.527952352G
@@ -54,16 +24,6 @@ params= 45.970706M
 Unfrozen params= 0.218534M
 Unfrozen Ratio= 0.48%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 1-4:
 FLOPs= 46.643689568G
@@ -72,16 +32,6 @@ Unfrozen params= 0.253894M
 Unfrozen Ratio= 0.55%
 ==========================
 =====================Experinment 2======================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 2-1:
 FLOPs= 46.643689568G
@@ -89,16 +39,6 @@ params= 46.006066M
 Unfrozen params= 0.253894M
 Unfrozen Ratio= 0.55%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 2-2:
 FLOPs= 46.64071664G
@@ -106,16 +46,6 @@ params= 45.903706M
 Unfrozen params= 0.151534M
 Unfrozen Ratio= 0.33%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 2-3:
 FLOPs= 46.689149024G
@@ -123,16 +53,6 @@ params= 46.108426M
 Unfrozen params= 0.356254M
 Unfrozen Ratio= 0.77%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 2-4:
 FLOPs= 46.689149024G
@@ -140,16 +60,6 @@ params= 46.108426M
 Unfrozen params= 0.356254M
 Unfrozen Ratio= 0.77%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 2-5:
 FLOPs= 46.681321568G
@@ -157,17 +67,14 @@ params= 46.07309M
 Unfrozen params= 0.320918M
 Unfrozen Ratio= 0.7%
 ==========================
+==========================
+Ablation model 2-6:
+FLOPs= 46.478409824G
+params= 46.084034M
+Unfrozen params= 0.331862M
+Unfrozen Ratio= 0.72%
+==========================
 =====================Experinment 3======================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 3-1:
 FLOPs= 46.681321568G
@@ -175,16 +82,6 @@ params= 46.07309M
 Unfrozen params= 0.320918M
 Unfrozen Ratio= 0.7%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 3-2:
 FLOPs= 46.681321568G
@@ -192,16 +89,6 @@ params= 46.07309M
 Unfrozen params= 0.320918M
 Unfrozen Ratio= 0.7%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Ablation model 3-3:
 FLOPs= 46.681321568G
@@ -209,32 +96,34 @@ params= 46.07309M
 Unfrozen params= 0.320918M
 Unfrozen Ratio= 0.7%
 ==========================
+==========================
+Ablation model 3-4:
+FLOPs= 46.478409824G
+params= 46.084034M
+Unfrozen params= 0.331862M
+Unfrozen Ratio= 0.72%
+==========================
+====================Experinment 4======================
+==========================
+Ablation model 4-4:
+FLOPs= 46.685258816G
+params= 46.132648M
+Unfrozen params= 0.082686M
+Unfrozen Ratio= 0.18%
+==========================
+==========================
+Ablation model 4-6:
+FLOPs= 51.009037632G
+params= 46.232026M
+Unfrozen params= 0.145526M
+Unfrozen Ratio= 0.31%
+==========================
 ====================Backbone = Swin-Tiny=================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 basemodel Model:Swin-T-Att-UNet
 FLOPs= 46.173778784G
 params= 45.752562M
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Swin-T-Att-UNet:
 FLOPs= 46.173778784G
@@ -242,16 +131,6 @@ params= 45.752562M
 Unfrozen params= 0.00039M
 Unfrozen Ratio= 0.0%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 BitFit:
 FLOPs= 46.173778784G
@@ -259,16 +138,6 @@ params= 45.752562M
 Unfrozen params= 0.088456M
 Unfrozen Ratio= 0.19%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Adapter-Tuning:
 FLOPs= 47.34267888G
@@ -276,16 +145,6 @@ params= 48.270706M
 Unfrozen params= 2.518534M
 Unfrozen Ratio= 5.22%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 ConvPass:
 FLOPs= 46.510923872G
@@ -293,16 +152,6 @@ params= 45.95429M
 Unfrozen params= 0.202118M
 Unfrozen Ratio= 0.44%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 LoRA:
 FLOPs= 46.412215136G
@@ -310,16 +159,6 @@ params= 45.924594M
 Unfrozen params= 0.172422M
 Unfrozen Ratio= 0.38%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 AdaptFormer:
 FLOPs= 47.903947616G
@@ -327,16 +166,13 @@ params= 46.56357M
 Unfrozen params= 0.811398M
 Unfrozen Ratio= 1.74%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
+==========================
+VPT:
+FLOPs= 72.126707264G
+params= 46.935762M
+Unfrozen params= 3.184896M
+Unfrozen Ratio= 6.52%
+==========================
 ==========================
 TP-LoRA:
 FLOPs= 46.681321568G
@@ -345,31 +181,11 @@ Unfrozen params= 0.320918M
 Unfrozen Ratio= 0.7%
 ==========================
 ====================Backbone = Swin-Small=================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 basemodel Model:Swin-S-Att-UNet
 FLOPs= 50.346922976G
 params= 67.04613M
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Swin-S-Att-UNet:
 FLOPs= 50.346922976G
@@ -377,16 +193,6 @@ params= 67.04613M
 Unfrozen params= 0.00039M
 Unfrozen Ratio= 0.0%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 BitFit:
 FLOPs= 50.346922976G
@@ -394,16 +200,6 @@ params= 67.04613M
 Unfrozen params= 0.16348M
 Unfrozen Ratio= 0.24%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 Adapter-Tuning:
 FLOPs= 51.862639584G
@@ -411,16 +207,6 @@ params= 71.345266M
 Unfrozen params= 4.299526M
 Unfrozen Ratio= 6.02%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 ConvPass:
 FLOPs= 50.722904288G
@@ -428,16 +214,6 @@ params= 67.418738M
 Unfrozen params= 0.372998M
 Unfrozen Ratio= 0.55%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 LoRA:
 FLOPs= 50.614260704G
@@ -445,16 +221,6 @@ params= 67.365618M
 Unfrozen params= 0.319878M
 Unfrozen Ratio= 0.47%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
 ==========================
 AdaptFormer:
 FLOPs= 52.196309984G
@@ -462,16 +228,13 @@ params= 68.446962M
 Unfrozen params= 1.401222M
 Unfrozen Ratio= 2.05%
 ==========================
-[INFO] Register count_convNd() for <class 'torch.nn.modules.conv.Conv2d'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.normalization.LayerNorm'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.dropout.Dropout'>.
-[INFO] Register count_linear() for <class 'torch.nn.modules.linear.Linear'>.
-[INFO] Register count_softmax() for <class 'torch.nn.modules.activation.Softmax'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.activation.ReLU'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.container.Sequential'>.
-[INFO] Register count_normalization() for <class 'torch.nn.modules.batchnorm.BatchNorm2d'>.
-[INFO] Register count_upsample() for <class 'torch.nn.modules.upsampling.Upsample'>.
-[INFO] Register zero_ops() for <class 'torch.nn.modules.pooling.MaxPool2d'>.
+==========================
+VPT:
+FLOPs= 76.726753856G
+params= 68.22933M
+Unfrozen params= 3.306M
+Unfrozen Ratio= 4.71%
+==========================
 ==========================
 TP-LoRA:
 FLOPs= 50.879654112G
