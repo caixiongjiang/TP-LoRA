@@ -2,6 +2,8 @@ from nets.TP_LoRA.swin_transformer import swin_tiny_patch4_window7_224 as create
 from nets.TP_LoRA.swin_transformer import swin_small_patch4_window7_224 as create_model_S_224
 from nets.TP_LoRA.tp_lora_adapter import TP_LoRA_Adapter, TP_LoRA_Adapter_CNN
 from nets.TP_LoRA.utils import read_vector_from_json
+from nets.TP_LoRA.convnext import convnext_tiny as create_model_convNext_t
+from .utils import read_config
 
 import torch.nn as nn
 import torch
@@ -94,8 +96,12 @@ class Attention_block(nn.Module):
             nn.BatchNorm2d(1),
             nn.Sigmoid()
         )
+        self.config = read_config()
         # TP-LoRA-Adapter-CNN-ATT
-        self.tp_lora_adapter_cnn = TP_LoRA_Adapter_CNN(in_dim=F_g, text_vector=words_vector, size=size, dataset=dataset)
+        if self.config["MODEL"]["LORA_OUT_LOCATION"] == "BASE":
+            pass
+        else:
+            self.tp_lora_adapter_cnn = TP_LoRA_Adapter_CNN(in_dim=F_g, text_vector=words_vector, size=size, dataset=dataset)
 
         self.relu = nn.ReLU(inplace=True)
 
@@ -104,7 +110,10 @@ class Attention_block(nn.Module):
         x1 = self.W_x(x)
         psi = self.relu(g1 + x1)
         psi = self.psi(psi)
-        out = x * psi + self.tp_lora_adapter_cnn(x)
+        if self.config["MODEL"]["LORA_OUT_LOCATION"] == "BASE":
+            out = x * psi
+        else:
+            out = x * psi + self.tp_lora_adapter_cnn(x)
         return out
 
 
@@ -120,6 +129,8 @@ class TP_LoRA(nn.Module):
             self.swin_backbone = create_model_T_224(size=text_size, dataset=dataset, num_classes=1000)
         elif backbone == "swin_S_224":
             self.swin_backbone = create_model_S_224(size=text_size, dataset=dataset, num_classes=1000)
+        elif backbone == "convnext_t":
+            self.swin_backbone = create_model_convNext_t(pretrained=pretrained, in_22k=False)
 
         # text_prompt_token_vector
         self.words_vector = torch.tensor(read_vector_from_json(size=text_size, dataset=dataset))#[1, seq, 768]
@@ -201,25 +212,28 @@ class TP_LoRA(nn.Module):
         x2 = self.downSample(x1)
         x2 = self.cnn2(x2)
 
-        x, H, W, feat1, feat2, feat3 = self.swin_backbone(x)
-        # print(x.shape)
-        # print(feat1.shape)
-        # print(feat2.shape)
-        # print(feat3.shape)
-
-
-
-        # 转回卷积网络所需要尺寸
-        # x = x.view(-1, 8 * self.embed_dim, H, W)
-
-        _, size1, C1 = feat1.shape
-        feat1 = feat1.permute(0, 2, 1).contiguous().view(-1, C1, size1//(8*H), 8*H)
-
-        _, size2, C2 = feat2.shape
-        feat2 = feat2.permute(0, 2, 1).contiguous().view(-1, C2, size2//(4*H), 4*H)
-
-        _, size3, C3 = feat3.shape
-        feat3 = feat3.permute(0, 2, 1).contiguous().view(-1, C3, size3//(2*H), 2*H)
+        if self.backbone == "convnext_t":
+            feat1, feat2, feat3, x = self.swin_backbone.forward_features(x)
+        else:
+            x, H, W, feat1, feat2, feat3 = self.swin_backbone(x)
+            # print(x.shape)
+            # print(feat1.shape)
+            # print(feat2.shape)
+            # print(feat3.shape)
+    
+    
+    
+            # 转回卷积网络所需要尺寸
+            # x = x.view(-1, 8 * self.embed_dim, H, W)
+    
+            _, size1, C1 = feat1.shape
+            feat1 = feat1.permute(0, 2, 1).contiguous().view(-1, C1, size1//(8*H), 8*H)
+    
+            _, size2, C2 = feat2.shape
+            feat2 = feat2.permute(0, 2, 1).contiguous().view(-1, C2, size2//(4*H), 4*H)
+    
+            _, size3, C3 = feat3.shape
+            feat3 = feat3.permute(0, 2, 1).contiguous().view(-1, C3, size3//(2*H), 2*H)
 
         # print(feat1.shape)
         # print(feat2.shape)
@@ -271,6 +285,10 @@ class TP_LoRA(nn.Module):
 
         # 开启num_classes层的参数
         for param in self.final_conv.parameters():
+            param.requires_grad = True
+
+    def unfrozen(self):
+        for param in self.parameters():
             param.requires_grad = True
 
     def calculate_unfrozen_parameter_ratio(self):
