@@ -15,9 +15,9 @@ def get_vector(size, dataset, net, tokenizer):
 
 def model_init():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    base_config = BertConfig.from_pretrained(r'E:\PEFT\model_data\bert')
-    bert_base = BertModel.from_pretrained(r'E:\PEFT\model_data\bert', config=base_config)
-    tokenizer = BertTokenizer.from_pretrained(r'E:\PEFT\model_data\bert')
+    base_config = BertConfig.from_pretrained('/home/caixj/data/TP-LoRA/model_data/bert')
+    bert_base = BertModel.from_pretrained('/home/caixj/data/TP-LoRA/model_data/bert', config=base_config)
+    tokenizer = BertTokenizer.from_pretrained('/home/caixj/data/TP-LoRA/model_data/bert')
     bert_base.to(device)
 
     return bert_base, tokenizer
@@ -89,7 +89,7 @@ def vector2dict(words_vector, size, dataset):
     return data
 
 
-def save_json(dict_list, json_file_path=r'E:\PEFT\nets\TP_LoRA\prompt_vector.json'):
+def save_json(dict_list, json_file_path='/home/caixj/data/TP-LoRA/prompt_vector.json'):
 
     with open(json_file_path, 'w') as f:
         json.dump(dict_list, f, indent=4)
