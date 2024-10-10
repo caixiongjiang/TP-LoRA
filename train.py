@@ -16,6 +16,7 @@ from nets.LoRA.lora import LoRA
 from nets.AdaptFormer.adaptformer import AdaptFormer
 from nets.VPT.vpt import VPT
 from nets.TP_LoRA.tp_lora import TP_LoRA
+from nets.TP_LoRA.resnet_tp_lora import ResNet50_TP_LoRA
 from nets.TP_LoRA.utils import Update_TP_LoRA_Set
 
 from nets.utils import get_lr_scheduler, set_optimizer_lr, weights_init
@@ -31,7 +32,7 @@ if __name__ == "__main__":
     sync_bn         = False
     fp16            = False
     num_classes = 5 + 1
-    backbone    = "swin_T_224" # swin_T_224, swin_S_224
+    backbone    = "swin_T_224" # # swin_T_224, swin_S_224, convnext_t，resnet50
     pretrained  = False
     model_path  = "model_data/Swin-T-Att-UNet-Orange-Navel-4.5k.pth"
     input_shape = [224, 224]
@@ -101,9 +102,10 @@ if __name__ == "__main__":
     # mlp_dim:0.125, 0.25
     # act: LoRA, GeLU, ReLU 
     # in_location: ATT, MLP, ATT+MLP
-    # out_location: ALL, DEEP
+    # out_location: ALL, DEEP, BASE
     Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='LoRA', in_location='ATT', out_location='ALL')
     model = TP_LoRA(text_size='TINY', dataset='Orange-Navel', num_classes=num_classes, pretrained=pretrained, backbone=backbone).train()
+    # model = ResNet50_TP_LoRA(text_size='TINY', dataset='Orange-Navel', num_classes=num_classes, pretrained=pretrained, backbone=backbone).train()
 
     # (Different Text)
     # model = TP_LoRA(text_size='TINY', dataset='Orange-Navel', num_classes=num_classes, pretrained=pretrained, backbone=backbone).train()
