@@ -19,6 +19,7 @@ from nets.VPT.vpt import VPT
 from nets.LoRA.lora import LoRA
 from nets.ConvPass.convpass_tuning import ConvPass_Tuning
 from nets.TP_LoRA.tp_lora import TP_LoRA
+from nets.TP_LoRA.resnet_tp_lora import ResNet50_TP_LoRA
 from nets.TP_LoRA.utils import Update_TP_LoRA_Set
 
 from utils.utils import cvtColor, preprocess_input, resize_image, show_config
@@ -66,6 +67,7 @@ class Unet(object):
         # self.net = ConvPass_Tuning(num_classes=self.num_classes, backbone=self.backbone)
         
         Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='LoRA', in_location='ATT', out_location='ALL')
+        # self.net = ResNet50_TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=self.num_classes, backbone=self.backbone)
         self.net = TP_LoRA(text_size='TINY', dataset='Orange-Navel', num_classes=self.num_classes, backbone=self.backbone)
         # self.net = TP_LoRA(text_size='TINY', dataset='Grapefruit', num_classes=self.num_classes, backbone=self.backbone)
         # self.net = TP_LoRA(text_size='TINY', dataset='Lemon', num_classes=self.num_classes, backbone=self.backbone)
