@@ -1,4 +1,4 @@
-## TP-LoRA: Parameter-Efﬁcient Fine-Tuning for citrus fruit defect segmentation model based on text prompt.
+## Parameter-Efﬁcient Fine-Tuning for citrus fruit defect segmentation model based on text prompt.
 
 [中文](README_CH.md)
 
@@ -20,6 +20,7 @@ This is the official repository for our recent work: TP-LoRA([PDF]())
 
 - [x] Code and datasets are available here.(January/30/2024)
 - [x] Experimental results are available.(February/26/2024)
+- [x] Update code and train logs in accordance with the requirements of the review.(October/11/2024) 
 
 ### Overview
 ---
@@ -61,6 +62,8 @@ x: The dataset is not publicly available for commercial reasons.
 |:--------------------:|:---------------------:|:---------------------:|
 | Swin-Tiny | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/swin_tiny_patch4_window7_224_1k.pth) |
 | Swin-Small | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/swin_small_patch4_window7_224_1k.pth) |
+| Convnext-Tiny | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.1/convnext_tiny_1k_224_ema.pth) |
+| ResNet50 | $224\times 224$ | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.1/resnet50-19c8e357.pth) |
 
 * Pretrained basic segmentation network:
 
@@ -68,6 +71,8 @@ x: The dataset is not publicly available for commercial reasons.
 |:--------------------:|:---------------------:|:---------------------:|:---------------------:|
 | Swin-T-Att-UNet | $224\times 224$ | 89.75 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/Swin-T-Att-UNet-Orange-Navel-4.5k.pth) |
 | Swin-S-Att-UNet | $224\times 224$ | 89.92 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.0/Swin-S-Att-UNet-Orange-Navel-4.5k.pth) |
+| Convnext-T-Att-UNet | $224\times 224$ | 78.54 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.1/Convnext-T-Att-UNet-Orange-Navel-4.5k.pth) |
+| ResNet50-Att-UNet | $224\times 224$ | 85.27 | [download](https://github.com/caixiongjiang/TP-LoRA/releases/download/v1.0.1/ResNet50-Att-UNet-Orange-Navel-4.5k.pth) |
 
 * Text encode network:
 
@@ -372,6 +377,10 @@ python3 summary.py
 python3 visualization.py
 ```
 
+* Class-activated mask visualization for the difference between TP-LoRA and LoRA:
+```python
+python3 visualization_diff.py
+```
 
 ### Citation
 ---
