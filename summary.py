@@ -12,6 +12,7 @@ from nets.LoRA.lora import LoRA
 from nets.AdaptFormer.adaptformer import AdaptFormer
 from nets.VPT.vpt import VPT
 from nets.TP_LoRA.tp_lora import TP_LoRA
+from nets.TP_LoRA.resnet_tp_lora import ResNet50_TP_LoRA
 from nets.TP_LoRA.utils import Update_TP_LoRA_Set
 
 
@@ -80,6 +81,10 @@ if __name__ == '__main__':
     model_2_5 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_5, model_name='Ablation model 2-5', basemodel=False)
 
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='BASE')
+    model_2_6 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False,backbone="swin_T_224")
+    calculate(model_2_6, model_name='Ablation model 2-6', basemodel=False)
+
     print("=====================Experinment 3======================")
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
@@ -93,7 +98,21 @@ if __name__ == '__main__':
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_3_3 = TP_LoRA(text_size='LARGE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_3_3, model_name='Ablation model 3-3', basemodel=False)
+
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='BASE')
+    model_3_4 = TP_LoRA(text_size='LARGE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
+    calculate(model_3_4, model_name='Ablation model 3-4', basemodel=False)
+
    
+    print("====================Experinment 4======================")
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
+    model_4_4 = TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=5 + 1, pretrained=False, backbone="convnext_t")
+    calculate(model_4_4, model_name='Ablation model 4-4', basemodel=False)
+
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
+    model_4_6 = ResNet50_TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=5 + 1, pretrained=False, backbone="resnet50")
+    calculate(model_4_6, model_name='Ablation model 4-6', basemodel=False)
+
     print("====================Backbone = Swin-Tiny=================")
 
     basemodel_t = swinTS_Att_Unet(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
