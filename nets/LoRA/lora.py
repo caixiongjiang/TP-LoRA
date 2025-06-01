@@ -1,6 +1,7 @@
 from nets.LoRA.swin_transformer import swin_tiny_patch4_window7_224 as create_model_T_224
 from nets.LoRA.swin_transformer import swin_small_patch4_window7_224 as create_model_S_224
 from nets.LoRA.lora_adapter import LoRA_Adapter, LoRA_Adapter_CNN
+from nets.LoRA.convnext import convnext_tiny as create_model_convNext_t
 
 import torch.nn as nn
 import torch
@@ -118,6 +119,8 @@ class LoRA(nn.Module):
             self.swin_backbone = create_model_T_224(num_classes=1000)
         elif backbone == "swin_S_224":
             self.swin_backbone = create_model_S_224(num_classes=1000)
+        elif backbone == "convnext_t":
+            self.swin_backbone = create_model_convNext_t(pretrained=pretrained, in_22k=False)
 
         # 将swin transfomer的分类头去掉
         remove_head = nn.Sequential()
@@ -198,25 +201,28 @@ class LoRA(nn.Module):
         x2 = self.downSample(x1)
         x2 = self.cnn2(x2)
 
-        x, H, W, feat1, feat2, feat3 = self.swin_backbone(x)
-        # print(x.shape)
-        # print(feat1.shape)
-        # print(feat2.shape)
-        # print(feat3.shape)
+        if self.backbone == "convnext_t":
+            feat1, feat2, feat3, x = self.swin_backbone.forward_features(x)
+        else:
+            x, H, W, feat1, feat2, feat3 = self.swin_backbone(x)
+            # print(x.shape)
+            # print(feat1.shape)
+            # print(feat2.shape)
+            # print(feat3.shape)
 
 
 
-        # 转回卷积网络所需要尺寸
-        # x = x.view(-1, 8 * self.embed_dim, H, W)
+            # 转回卷积网络所需要尺寸
+            # x = x.view(-1, 8 * self.embed_dim, H, W)
 
-        _, size1, C1 = feat1.shape
-        feat1 = feat1.permute(0, 2, 1).contiguous().view(-1, C1, size1//(8*H), 8*H)
+            _, size1, C1 = feat1.shape
+            feat1 = feat1.permute(0, 2, 1).contiguous().view(-1, C1, size1//(8*H), 8*H)
 
-        _, size2, C2 = feat2.shape
-        feat2 = feat2.permute(0, 2, 1).contiguous().view(-1, C2, size2//(4*H), 4*H)
+            _, size2, C2 = feat2.shape
+            feat2 = feat2.permute(0, 2, 1).contiguous().view(-1, C2, size2//(4*H), 4*H)
 
-        _, size3, C3 = feat3.shape
-        feat3 = feat3.permute(0, 2, 1).contiguous().view(-1, C3, size3//(2*H), 2*H)
+            _, size3, C3 = feat3.shape
+            feat3 = feat3.permute(0, 2, 1).contiguous().view(-1, C3, size3//(2*H), 2*H)
 
         # print(feat1.shape)
         # print(feat2.shape)

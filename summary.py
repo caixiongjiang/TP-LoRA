@@ -2,6 +2,7 @@
 pip install thop
 '''
 import torch
+import gc
 from thop import profile
 
 from nets.BaseModel.swinTS_Att_Unet import swinTS_Att_Unet
@@ -14,6 +15,16 @@ from nets.VPT.vpt import VPT
 from nets.TP_LoRA.tp_lora import TP_LoRA
 from nets.TP_LoRA.resnet_tp_lora import ResNet50_TP_LoRA
 from nets.TP_LoRA.utils import Update_TP_LoRA_Set
+from nets.Bitfit.resnet_bitfit import ResNetBitFit
+from nets.LoRA.resnet_lora import ResNetLoRA
+
+
+def clear_memory():
+    """强制清理内存和GPU缓存"""
+    gc.collect()
+    if torch.cuda.is_available():
+        torch.cuda.empty_cache()
+        torch.cuda.synchronize()
 
 
 def calculate(net, model_name, basemodel=False):
@@ -22,6 +33,12 @@ def calculate(net, model_name, basemodel=False):
     if not basemodel:
         unfrozen_param, ratio = net.calculate_unfrozen_parameter_ratio()
     flops, params = profile(net, inputs=(input, ))
+    
+    # 清理内存
+    del input
+    del net
+    clear_memory()
+    
     if not basemodel:
         print('==========================')
         print(f'{model_name}:')
@@ -46,133 +63,225 @@ if __name__ == '__main__':
     Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='LoRA', in_location='ATT', out_location='ALL')
     model_1_1 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_1_1, model_name='Ablation model 1-1', basemodel=False)
+    del model_1_1
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='GeLU', in_location='ATT', out_location='ALL')
     model_1_2 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_1_2, model_name='Ablation model 1-2', basemodel=False)
+    del model_1_2
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.125, lora_dim=8, act='ReLU', in_location='ATT', out_location='ALL')
     model_1_3 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_1_3, model_name='Ablation model 1-3', basemodel=False)
+    del model_1_3
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT', out_location='ALL')
     model_1_4 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_1_4, model_name='Ablation model 1-4', basemodel=False)
+    del model_1_4
+    clear_memory()
 
     print("=====================Experinment 2======================")
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT', out_location='ALL')
     model_2_1 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_1, model_name='Ablation model 2-1', basemodel=False)
+    del model_2_1
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='MLP', out_location='ALL')
     model_2_2 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_2, model_name='Ablation model 2-2', basemodel=False)
+    del model_2_2
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='ALL')
     model_2_3 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_3, model_name='Ablation model 2-3', basemodel=False)
+    del model_2_3
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='ALL')
     model_2_4 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_4, model_name='Ablation model 2-4', basemodel=False)
+    del model_2_4
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_2_5 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_2_5, model_name='Ablation model 2-5', basemodel=False)
+    del model_2_5
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='BASE')
     model_2_6 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False,backbone="swin_T_224")
     calculate(model_2_6, model_name='Ablation model 2-6', basemodel=False)
+    del model_2_6
+    clear_memory()
 
     print("=====================Experinment 3======================")
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_3_1 = TP_LoRA(text_size='TINY', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_3_1, model_name='Ablation model 3-1', basemodel=False)
+    del model_3_1
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_3_2 = TP_LoRA(text_size='BASE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_3_2, model_name='Ablation model 3-2', basemodel=False)
+    del model_3_2
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     model_3_3 = TP_LoRA(text_size='LARGE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_3_3, model_name='Ablation model 3-3', basemodel=False)
+    del model_3_3
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='BASE')
     model_3_4 = TP_LoRA(text_size='LARGE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(model_3_4, model_name='Ablation model 3-4', basemodel=False)
+    del model_3_4
+    clear_memory()
 
    
     print("====================Experinment 4======================")
-    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
-    model_4_4 = TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=5 + 1, pretrained=False, backbone="convnext_t")
-    calculate(model_4_4, model_name='Ablation model 4-4', basemodel=False)
+
+    model_4_6 = BitFit(num_classes=5 + 1, pretrained=False, backbone="convnext_t")
+    calculate(model_4_6, model_name='model_4_6')
+    del model_4_6
+    clear_memory()
+
+    model_4_7 = LoRA(num_classes=5 + 1, pretrained=False, backbone="convnext_t")
+    calculate(model_4_7, model_name='model_4_7')
+    del model_4_7
+    clear_memory()
+
+
+    model_4_10 = ResNetBitFit(num_classes=5 + 1, pretrained=False, backbone="resnet50")
+    calculate(model_4_10, model_name='model_4_10')
+    del model_4_10
+    clear_memory()
+
+    model_4_11 = ResNetLoRA(num_classes=5 + 1, pretrained=False, backbone="resnet50")
+    calculate(model_4_11, model_name='model_4_11')
+    del model_4_11
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
-    model_4_6 = ResNet50_TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=5 + 1, pretrained=False, backbone="resnet50")
-    calculate(model_4_6, model_name='Ablation model 4-6', basemodel=False)
+    model_4_8 = TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=5 + 1, pretrained=False, backbone="convnext_t")
+    calculate(model_4_8, model_name='Ablation model 4-8', basemodel=False)
+    del model_4_8
+    clear_memory()
+
+    Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
+    model_4_12 = ResNet50_TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=5 + 1, pretrained=False, backbone="resnet50")
+    calculate(model_4_12, model_name='Ablation model 4-12', basemodel=False)
+    del model_4_12
+    clear_memory()
 
     print("====================Backbone = Swin-Tiny=================")
 
     basemodel_t = swinTS_Att_Unet(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(basemodel_t, model_name='Swin-T-Att-UNet', basemodel=True)
+    del basemodel_t
+    clear_memory()
 
     basemodel_t_class = swinTS_Att_Unet(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     basemodel_t_class.frozen()
     calculate(basemodel_t_class, model_name='Swin-T-Att-UNet', basemodel=False)
+    del basemodel_t_class
+    clear_memory()
 
     bitfit_t = BitFit(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(bitfit_t, model_name='BitFit')
+    del bitfit_t
+    clear_memory()
 
     adapter_tuning_t = Adapter_Tuning(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(adapter_tuning_t, model_name='Adapter-Tuning')
+    del adapter_tuning_t
+    clear_memory()
 
     convpass_tuning_t = ConvPass_Tuning(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(convpass_tuning_t, model_name='ConvPass')
+    del convpass_tuning_t
+    clear_memory()
 
     lora_t = LoRA(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(lora_t, model_name='LoRA')
+    del lora_t
+    clear_memory()
 
     adaptformer_t = AdaptFormer(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(adaptformer_t, model_name='AdaptFormer')
+    del adaptformer_t
+    clear_memory()
 
     vpt_t = VPT(num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(vpt_t, model_name='VPT')
+    del vpt_t
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     tp_lora_t = TP_LoRA(text_size='LARGE', dataset='Orange-Navel',num_classes=5 + 1, pretrained=False, backbone="swin_T_224")
     calculate(tp_lora_t, model_name='TP-LoRA')
+    del tp_lora_t
+    clear_memory()
 
     print("====================Backbone = Swin-Small=================")
 
     basemodel_s = swinTS_Att_Unet(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(basemodel_s, model_name='Swin-S-Att-UNet', basemodel=True)
+    del basemodel_s
+    clear_memory()
 
     basemodel_s_class = swinTS_Att_Unet(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     basemodel_s_class.frozen()
     calculate(basemodel_s_class, model_name='Swin-S-Att-UNet', basemodel=False)
+    del basemodel_s_class
+    clear_memory()
 
     bitfit_s = BitFit(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(bitfit_s, model_name='BitFit')
+    del bitfit_s
+    clear_memory()
 
     adapter_tuning_s = Adapter_Tuning(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(adapter_tuning_s, model_name='Adapter-Tuning')
+    del adapter_tuning_s
+    clear_memory()
 
     convpass_tuning_s = ConvPass_Tuning(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(convpass_tuning_s, model_name='ConvPass')
+    del convpass_tuning_s
+    clear_memory()
 
     lora_s = LoRA(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(lora_s, model_name='LoRA')
+    del lora_s
+    clear_memory()
 
     adaptformer_s = AdaptFormer(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(adaptformer_s, model_name='AdaptFormer')
+    del adaptformer_s
+    clear_memory()
 
     vpt_s = VPT(num_classes=5 + 1, pretrained=False, backbone="swin_S_224")
     calculate(vpt_s, model_name='VPT')
+    del vpt_s
+    clear_memory()
 
     Update_TP_LoRA_Set(mlp_dim=0.25, lora_dim=8, act='ReLU', in_location='ATT+MLP', out_location='DEEP')
     tp_lora_s = TP_LoRA(text_size='LARGE', dataset='Orange-Navel', num_classes=3 + 1, pretrained=False, backbone="swin_S_224")
     calculate(tp_lora_s, model_name='TP-LoRA')
+    del tp_lora_s
+    clear_memory()
+
+    print("内存清理完成！")
 
 

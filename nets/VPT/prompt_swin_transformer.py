@@ -528,7 +528,7 @@ class PromptedWindowAttention(WindowAttention):
 
 
 
-def read_config(config_file=r'E:\PEFT\nets\VPT\model_config.yaml'):
+def read_config(config_file=r'/home/caixj/PycharmProjects/TP-LoRA/nets/VPT/model_config.yaml'):
     with open(config_file, 'r', encoding='utf-8') as f:
         config = yaml.safe_load(f)
     return config
