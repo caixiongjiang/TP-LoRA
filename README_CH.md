@@ -1,11 +1,12 @@
-## TP-LoRA: Parameter-Efﬁcient Fine-Tuning for citrus fruit defect segmentation model based on text prompt.
+## Parameter-Efﬁcient Fine-Tuning for citrus fruit defect segmentation model based on text prompt.
 
 [English](README.md)
 
-这是我们不久前工作的官方资料库：TP-LoRA([PDF]())
+这是我们不久前工作的官方资料库：TP-LoRA([PDF](https://doi.org/10.1016/j.engappai.2025.111765)
 
 ### 新闻
 ---
+这项工作于2025年7月10日被`Engineering Applications of Artificial Intelligence`期刊接收。
 
 ### 亮点
 ---
@@ -380,7 +381,15 @@ python3 visualization_diff.py
 ---
 
 ```bib
-
+@article{zhu2025parameter,
+  title={Parameter-Efficient Fine-Tuning for citrus fruit defect segmentation model based on text prompt},
+  author={Zhu, Yun and Cai, Xiongjiang and Liu, Shuwen and Yu, Zhiyue and Gao, Lianfeng and Xu, Youyun},
+  journal={Engineering Applications of Artificial Intelligence},
+  volume={160},
+  pages={111765},
+  year={2025},
+  publisher={Elsevier}
+}
 ```
 
 ### 致谢
