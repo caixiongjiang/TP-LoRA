@@ -2,10 +2,11 @@
 
 [中文](README_CH.md)
 
-This is the official repository for our recent work: TP-LoRA([PDF]())
+This is the official repository for our recent work: TP-LoRA([PDF](https://doi.org/10.1016/j.engappai.2025.111765))
 
 ### News
 ---
+This work was accepted for publication in the journal `Engineering Applications of Artificial Intelligence` on July 10, 2025.
 
 ### Highlights
 ---
@@ -20,7 +21,7 @@ This is the official repository for our recent work: TP-LoRA([PDF]())
 
 - [x] Code and datasets are available here.(January/30/2024)
 - [x] Experimental results are available.(February/26/2024)
-- [x] Update code and train logs in accordance with the requirements of the review.(October/11/2024) 
+- [x] Update code and train logs in accordance with the requirements of the review.(October/11/2024)
 
 ### Overview
 ---
@@ -386,7 +387,15 @@ python3 visualization_diff.py
 ---
 
 ```bib
-
+@article{zhu2025parameter,
+  title={Parameter-Efficient Fine-Tuning for citrus fruit defect segmentation model based on text prompt},
+  author={Zhu, Yun and Cai, Xiongjiang and Liu, Shuwen and Yu, Zhiyue and Gao, Lianfeng and Xu, Youyun},
+  journal={Engineering Applications of Artificial Intelligence},
+  volume={160},
+  pages={111765},
+  year={2025},
+  publisher={Elsevier}
+}
 ```
 ### Acknowledgement
 ---
