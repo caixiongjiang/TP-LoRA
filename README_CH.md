@@ -2,7 +2,11 @@
 
 [English](README.md)
 
-这是我们不久前工作的官方资料库：TP-LoRA([PDF](https://doi.org/10.1016/j.engappai.2025.111765)
+这是我们不久前工作的官方资料库：TP-LoRA([PDF](https://doi.org/10.1016/j.engappai.2025.111765
+        
+        
+        
+        ))
 
 ### 新闻
 ---
